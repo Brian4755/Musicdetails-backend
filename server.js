@@ -23,8 +23,8 @@ app.use(express.json())
 app.use(formData.parse())
 
 // mount imported routes
-app.use('/api/profiles', profilesRouter)
-app.use('/api/auth', authRouter)
+// app.use('/api/profiles', profilesRouter)
+// app.use('/api/auth', authRouter)
 app.use('/api/music', musicRouter)
 
 // handle 404 errors

@@ -1,15 +1,16 @@
 import axios from "axios"
 
-export function musicSearch(req, res) {
-  const axios = require('axios');
-
+export async function musicSearch(req, res) {
+  console.log(req.query.q)
+  
   const options = {
     method: 'GET',
-    url: process.env.url,
+    url: 'https://genius-song-lyrics1.p.rapidapi.com/search/',
     params: {
-      q: '<REQUIRED>',
-      per_page: '10',
-      page: '1'
+      q: `${req.query.q}`,
+      // per_page: '10',
+      // page: '1',
+      // query: req.query.search
     },
     headers: {
       'X-RapidAPI-Key': process.env.XRapidAPIKey,
@@ -18,8 +19,9 @@ export function musicSearch(req, res) {
   };
 
   try {
-    const response = axios.request(options);
-    console.log(response.data);
+    const response = await axios.request(options);
+    // console.log(res.json(response.data))
+    res.json(response.data);
   } catch (error) {
     console.error(error);
   }

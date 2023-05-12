@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export async function idSearch(req, res) {
-  console.log('here here here', req.query.id)
   const options = {
     method: 'GET',
     url: 'https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/',
@@ -16,7 +15,6 @@ export async function idSearch(req, res) {
 
   try {
     const response = await axios.request(options);
-    // console.log(response);
     res.json(response.data)
   } catch (error) {
     console.error(error);

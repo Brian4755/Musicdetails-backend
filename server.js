@@ -23,9 +23,6 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(formData.parse())
 
-// mount imported routes
-// app.use('/api/profiles', profilesRouter)
-// app.use('/api/auth', authRouter)
 app.use('/api/id', IDRouter)
 app.use('/api/music', musicRouter)
 

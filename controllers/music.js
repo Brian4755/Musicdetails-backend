@@ -9,9 +9,6 @@ export async function musicSearch(req, res) {
     url: 'https://genius-song-lyrics1.p.rapidapi.com/search/',
     params: {
       q: `${req.query.q}`,
-      // per_page: '10',
-      // page: '1',
-      // query: req.query.search
     },
     headers: {
       'X-RapidAPI-Key': process.env.XRapidAPIKey,
@@ -21,7 +18,6 @@ export async function musicSearch(req, res) {
 
   try {
     const response = await axios.request(options);
-    // res.json(response.data);
     const responseID = response.data.hits[0].result.id
     res.json(responseID);
   } catch (error) {

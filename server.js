@@ -9,8 +9,6 @@ import formData from 'express-form-data'
 import './config/database.js'
 
 // import routes
-import { router as profilesRouter } from './routes/profiles.js'
-import { router as authRouter } from './routes/auth.js'
 import { router as musicRouter } from './routes/music.js'
 import { router as IDRouter} from './routes/id.js'
 

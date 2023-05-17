@@ -1,8 +1,6 @@
 import axios from "axios"
 
 export async function musicSearch(req, res) {
-  console.log(req.query.q)
-  console.log('this')
   
   const options = {
     method: 'GET',
@@ -18,7 +16,7 @@ export async function musicSearch(req, res) {
 
   try {
     const response = await axios.request(options);
-    const responseID = response.data.hits[0].result.id
+    const responseID = response.data.hits[0].result
     res.json(responseID);
   } catch (error) {
     console.error(error);
